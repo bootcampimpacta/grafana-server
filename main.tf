@@ -79,3 +79,7 @@ resource "aws_eip" "grafana-ip" {
   instance = module.grafana_ec2_instance.id
   vpc      = true
 }
+
+output "ip_acesso_grafana" {
+  value = "Acesse o Grafana pela URL http://${aws_eip.grafana-ip.public_ip}:3000/"
+}
